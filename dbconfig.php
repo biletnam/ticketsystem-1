@@ -21,5 +21,5 @@ catch (PDOException $e) {
     echo $e->getMessage();
 }
 
-include_once 'user.php';
+include_once 'user.class.php';
 $user = new USER($DB_con);

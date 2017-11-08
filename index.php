@@ -47,9 +47,9 @@ if (isset($_POST['login'])) {
         <label for="password" class="sr-only">Passwort</label>
         <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
         <div class="checkbox">
-            <label>
+           <!-- <label>
                 <input type="checkbox" value="remember-me"> Eingeloggt bleiben
-            </label>
+            </label>-->
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Anmelden</button>
         <a href="createticket.php">Oder Ticket einsenden!</a>
