@@ -18,7 +18,7 @@ class TICKET
     public function createTicket($tsubject, $tmessage, $tmail)
     {
         try {
-            $stmt = $this->db->prepare("INSERT INTO ticket(subject, message, tmail) VALUES (:tsubject, :tmessage, :tmail)");
+            $stmt = $this->db->prepare("INSERT INTO ticket(name, email, message) VALUES (:tsubject, :tmessage, :tmail)");
 
             $stmt->bindparam(":tsubject", $tsubject);
             $stmt->bindparam(":tmessage", $tmessage);

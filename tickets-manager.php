@@ -7,16 +7,15 @@
  */
 
 include_once 'dbconfig.php';
-if(!$user->is_loggedin())
-{
+if (!$user->is_loggedin()) {
     $user->redirect('index.php');
 }
 $user_id = $_SESSION['user_session'];
 $stmt = $DB_con->prepare("SELECT * FROM user WHERE userID=:user_id");
 $tickets = $DB_con->prepare("SELECT * FROM tickets");
-$stmt->execute(array(":user_id"=>$user_id));
+$stmt->execute(array(":user_id" => $user_id));
 $tickets->execute();
-$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+$userRow = $stmt->fetch(PDO::FETCH_ASSOC);
 $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
@@ -44,7 +43,8 @@ $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">Ticketsystem | Lite</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -67,11 +67,29 @@ $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
 </nav>
 
 <main role="main" class="container">
+    <div class="container">
+        <h2>Alle Tickets</h2>
 
-    <?php
-    $result = $tickets->fetchAll(PDO::FETCH_ASSOC);
-    print_r($result);
-    ?>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>Nachricht</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($tickets->fetchALL(PDO::FETCH_ASSOC) as $row) : ?>
+            <tr>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['message']; ?></td>
+            </tr>
+            </tbody>
+            <?php endforeach; ?>
+        </table>
 
 </main><!-- /.container -->
 
@@ -79,11 +97,11 @@ $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"><\/script>')</script>
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"></script>
 </body>
 </html>
-
-
