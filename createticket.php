@@ -6,6 +6,21 @@
  * Time: 11:34
  */
 
+require_once 'dbconfig.php';
+
+if (isset($_POST['createTicket'])) {
+    $name = trim($_POST['tname']);
+    $email = trim($_POST['temail']);
+    $message = trim($_POST['tmessage']);
+
+    try {
+        $ticket->createTicket($name, $email, $message);
+    }
+    catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,21 +38,21 @@
 
 <div class="container">
     <h2>Ticket einsenden</h2>
-    <form>
+    <form method="post">
         <div class="form-group">
-            <label name="name">Name:</label>
-            <input type="text" id="name">
+            <label>Name:</label>
+            <input name="tname" type="text" id="name">
         </div>
         <div class="form-group">
-            <label name="email">E-Mail</label>
-            <input type="text" id="email">
+            <label>E-Mail</label>
+            <input name="temail" type="text" id="email">
         </div>
         <div class="form-group">
-            <label name="comment">Nachricht:</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
+            <label>Nachricht:</label>
+            <textarea name="tmessage" class="form-control" rows="5"></textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-block btn-primary" name="sendticket">
+            <button type="submit" class="btn btn-block btn-primary" name="createTicket">
                 <i class="glyphicon glyphicon-open-file"></i> Ticket einsenden
             </button>
         </div>

@@ -15,14 +15,15 @@ class TICKET
         $this->db = $DB_con;
     }
 
-    public function createTicket($tsubject, $tmessage, $tmail)
+    public function createTicket($name, $email, $message)
     {
         try {
-            $stmt = $this->db->prepare("INSERT INTO ticket(name, email, message) VALUES (:tsubject, :tmessage, :tmail)");
+            $stmt = $this->db->prepare("INSERT INTO tickets(name, email, message) VALUES (:name, :email, :message)");
 
-            $stmt->bindparam(":tsubject", $tsubject);
-            $stmt->bindparam(":tmessage", $tmessage);
-            $stmt->bindparam(":tmail", $tmail);
+            $stmt->bindparam(":name", $name);
+            $stmt->bindparam(":email", $email);
+            $stmt->bindparam(":message", $message);
+            $stmt->execute();
 
             return $stmt;
 

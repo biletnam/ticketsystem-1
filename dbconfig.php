@@ -23,3 +23,6 @@ catch (PDOException $e) {
 
 include_once 'user.class.php';
 $user = new USER($DB_con);
+
+include_once 'ticket.php';
+$ticket = new TICKET($DB_con);

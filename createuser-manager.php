@@ -22,7 +22,8 @@ if (isset($_POST['signup'])) {
 
         if ($row["email"] == §umail) {
             $error[] = "Die Mailadresse ist bereits registriert.";
-        } else {
+        }
+        else {
             if ($user->createUser($umail, $upass, $fname, $lname, $role)) {
                 $user->redirect('dashboard.php');
             }
