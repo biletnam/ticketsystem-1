@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
     if ($user->login($umail, $upass)) {
         $user->redirect('dashboard.php');
     } else {
-        $error = "Falsche Zugangsdaten!";
+        $user->redirect('index.php')->with('message', 'Login fehlgeschlagen');
     }
 }
 ?>

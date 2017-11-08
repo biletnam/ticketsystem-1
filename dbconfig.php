@@ -21,8 +21,8 @@ catch (PDOException $e) {
     echo $e->getMessage();
 }
 
-include_once 'user.class.php';
+include_once 'classes/userClass.php';
 $user = new USER($DB_con);
 
-include_once 'ticket.php';
+include_once 'classes/ticketClass.php';
 $ticket = new TICKET($DB_con);
