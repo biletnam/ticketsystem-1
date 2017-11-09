@@ -108,7 +108,6 @@ if (isset($_POST['signup'])) {
              <!--<input type="text" class="form-control" required name="role" placeholder="Rolle" />-->
              <select name="role">
                  <option value="Manager">Manager</option>
-                 <option value="Supporter">Supporter</option>
              </select>
             </div>
             <div class="clearfix"></div><hr />

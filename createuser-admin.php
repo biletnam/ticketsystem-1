@@ -24,7 +24,7 @@ if (isset($_POST['signup'])) {
             $error[] = "Die Mailadresse ist bereits registriert.";
         } else {
             if ($user->createUser($umail, $upass, $fname, $lname, $role)) {
-                $user->redirect('dashboard.php');
+                $user->redirect('dashboard-admin.php');
             }
         }
     } catch (PDOException $e) {

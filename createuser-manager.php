@@ -25,7 +25,7 @@ if (isset($_POST['signup'])) {
         }
         else {
             if ($user->createUser($umail, $upass, $fname, $lname, $role)) {
-                $user->redirect('dashboard.php');
+                $user->redirect('dashboard-manager.php');
             }
         }
     } catch (PDOException $e) {
