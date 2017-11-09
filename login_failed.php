@@ -9,18 +9,10 @@ if (isset($_POST['login'])) {
     $umail = $_POST['email'];
     $upass = $_POST['password'];
 
-    $stmt = $DB_con->prepare("SELECT * FROM user WHERE email=:umail");
-    $stmt->execute(array(":umail" => $umail));
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
     if ($user->login($umail, $upass)) {
-        if ($row["role"] == 'Admin') {
-            $user->redirect('dashboard-admin.php');
-        } else if ($row["role"] == 'Manager') {
-            $user->redirect('dashboard-manager.php');
-        } else {
-            $user->redirect('dashboard.php');
-        }
+        $user->redirect('dashboard.php');
+    } else {
+        $user->redirect('login_failed.php');
     }
 }
 ?>
@@ -31,6 +23,7 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Ticketsystem | Login</title>
 
@@ -45,6 +38,7 @@ if (isset($_POST['login'])) {
 <body>
 
 <div class="container">
+    Passwort oder E-Mail Adresse falsch.
     <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Login</h2>
         <label for="email" class="sr-only">E-Mail Adresse</label>

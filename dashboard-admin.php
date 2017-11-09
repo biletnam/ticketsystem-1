@@ -8,6 +8,10 @@ $user_id = $_SESSION['user_session'];
 $stmt = $DB_con->prepare("SELECT * FROM user WHERE userID=:user_id");
 $stmt->execute(array(":user_id"=>$user_id));
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+
+if (isset($_POST['getTicket'])) {
+    $userID = $_POST[':userID'];
+}
 ?>
 
 
@@ -41,13 +45,13 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard-manager.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="dashboard-admin.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tickets-manager.php">Tickets</a>
+                <a class="nav-link" href="tickets-admin.php">Tickets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="createuser-manager.php">User anlegen</a>
+                <a class="nav-link" href="createuser-admin.php">User anlegen</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php?logout=true">Logout<i class="glyphicon glyphicon-log-out"></i></a>
@@ -60,6 +64,7 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
     <div class="starter-template">
         <h1>Hallo <?php print($userRow['firstname']) . " " . ($userRow['lastname']); ?></h1>
+        <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
     </div>
 
 </main><!-- /.container -->

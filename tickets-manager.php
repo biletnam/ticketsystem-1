@@ -11,11 +11,13 @@ if (!$user->is_loggedin()) {
     $user->redirect('index.php');
 }
 $user_id = $_SESSION['user_session'];
+
 $stmt = $DB_con->prepare("SELECT * FROM user WHERE userID=:user_id");
-$tickets = $DB_con->prepare("SELECT * FROM tickets");
 $stmt->execute(array(":user_id" => $user_id));
+
+$tickets = $DB_con->prepare("SELECT * FROM tickets");
 $tickets->execute();
-$userRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
 $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
@@ -43,21 +45,20 @@ $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">Ticketsystem | Lite</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard-manager.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Tickets</a>
+                <a class="nav-link" href="tickets-manager.php">Tickets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="createuser.php">User anlegen</a>
+                <a class="nav-link" href="createuser-manager.php">User anlegen</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php?logout=true">Logout<i class="glyphicon glyphicon-log-out"></i></a>
@@ -77,15 +78,19 @@ $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
                 <th>Name</th>
                 <th>E-Mail</th>
                 <th>Nachricht</th>
+                <th>Zugewiesen an</th>
+                <th>Beendet</th>
             </tr>
             </thead>
             <tbody>
             <?php foreach ($tickets->fetchALL(PDO::FETCH_ASSOC) as $row) : ?>
-            <tr>
-                <td><?php echo $row['id']; ?></td>
+            <tr class='clickable-row' data-href='www.test.de'>
+                <td><?php echo $row['ticketsID']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['message']; ?></td>
+                <td><?php echo $row['isAssignedTo']; ?></td>
+                <td><?php echo $row['isFinished']; ?></td>
             </tr>
             </tbody>
             <?php endforeach; ?>
