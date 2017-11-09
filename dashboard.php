@@ -47,9 +47,6 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
                 <a class="nav-link" href="#">Tickets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="createuser.php">User anlegen</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="logout.php?logout=true">Logout<i class="glyphicon glyphicon-log-out"></i></a>
             </li>
         </ul>
@@ -60,6 +57,7 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
     <div class="starter-template">
         <h1>Hallo <?php print($userRow['firstname']) . " " . ($userRow['lastname']); ?></h1>
+        <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
     </div>
 
 </main><!-- /.container -->
