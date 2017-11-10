@@ -23,6 +23,8 @@ class TICKET
             $stmt->bindparam(":name", $name);
             $stmt->bindparam(":email", $email);
             $stmt->bindparam(":message", $message);
+
+
             $stmt->execute();
 
             return $stmt;
@@ -44,5 +46,16 @@ class TICKET
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
+    }
+
+    public function closeTicket()
+    {
+        try {
+            $stmt = $this->db->prepare('UPDATE tickets SET isFinished = 1 WHERE ticketsID = 1');
+            $stmt->execute();
+        } catch (PDOException $e) {
+
+        }
+
     }
 }

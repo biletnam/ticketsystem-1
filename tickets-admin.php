@@ -84,7 +84,7 @@ $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
             </thead>
             <tbody>
             <?php foreach ($tickets->fetchALL(PDO::FETCH_ASSOC) as $row) : ?>
-            <tr class='clickable-row' data-href='www.test.de'>
+            <tr>
                 <td><?php echo $row['ticketsID']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
