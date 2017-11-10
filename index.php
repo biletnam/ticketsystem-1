@@ -34,5 +34,5 @@ if (isset($_POST['login'])) {
 
 // Output the result
 
-echo $core->get($tpl, $page);
+    echo $core->get($tpl, $page);
 ?>
