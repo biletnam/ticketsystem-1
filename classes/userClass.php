@@ -6,7 +6,7 @@
  * Time: 17:14
  */
 
-class USER
+class user
 {
     private $db;
 

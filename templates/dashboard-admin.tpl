@@ -31,7 +31,10 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tickets.php">Tickets</a>
+                <a class="nav-link" href="tickets-admin.php">Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="createuser-admin.php">User anlegen</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php?logout=true">Logout<i class="glyphicon glyphicon-log-out"></i></a>
@@ -46,7 +49,11 @@
         <h1>Hallo {$firstname} {$lastname}</h1>
         Sie sind angemeldet als {$role}. <br>
         Ihre UserID lautet: {$userID}. <br>
-        <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
+        <div class="form-group">
+        <button type="submit" class="btn btn-block btn-primary" name="getTicket">
+            <i class="glyphicon glyphicon-open-file"></i> Nutzer anlegen
+        </button>
+        </div>
     </div>
 
 </main><!-- /.container -->

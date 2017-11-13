@@ -9,7 +9,7 @@ $core = new Dwoo\Core();
 $tpl = new Dwoo\Template\File('templates/dashboard.tpl');
 
 $page = array();
-$page['title']   = 'The next social networking website';
+$page['title']   = 'Ticketsystem | Dashboard';
 
 if(!$user->is_loggedin())
 {
@@ -20,6 +20,6 @@ $stmt = $DB_con->prepare("SELECT * FROM user WHERE userID=:user_id");
 $stmt->execute(array(":user_id"=>$user_id));
 $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
-$data = array('firstname'=>$userRow['firstname'], 'lastname'=>$userRow['lastname'], 'role'=>$userRow['role']);
+$data = array('firstname'=>$userRow['firstname'], 'lastname'=>$userRow['lastname'], 'role'=>$userRow['role'], 'userID'=>$userRow['userID']);
 
 echo $core->get($tpl, $data);

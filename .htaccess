@@ -7,4 +7,8 @@ RewriteBase /ticketsystem
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ index.php [QSA]
+RewriteCond %{REQUEST_URI} \/index\.php$ [NC]
+### Weblication Volltextsuche "Weblication-Grid/5.0 (wSearchBot)" ausschliessen:
+RewriteCond %{HTTP_USER_AGENT} !^Weblication.*(wSearchBot).*$ [NC]
+RewriteCond %{THE_REQUEST} ^GET
+RewriteRule ^(.*)index\.php$ /ticketsystem/$1?%{QUERY_STRING} [R=301,L]

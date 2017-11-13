@@ -36,7 +36,6 @@ class TICKET
 
     public function getTicket($userID)
     {
-
         try {
             $stmt = $this->db->prepare("INSERT INTO user_ticket(userID, ticketsID) VALUES (:userID, :ticketID)");
 
@@ -48,10 +47,11 @@ class TICKET
         }
     }
 
-    public function closeTicket()
+    public function closeTicket($ticketID)
     {
         try {
-            $stmt = $this->db->prepare('UPDATE tickets SET isFinished = 1 WHERE ticketsID = 1');
+            $stmt = $this->db->prepare('UPDATE tickets SET isFinished = 1 WHERE ticketsID = :ticketID');
+            $stmt -> bindparam(":ticketID", $ticketID);
             $stmt->execute();
         } catch (PDOException $e) {
 
