@@ -75,7 +75,7 @@
             <div class="form-group">
                 <!--<input type="text" class="form-control" required name="role" placeholder="Rolle" />-->
                 <select name="role">
-                    <option value="Supporter">Supporter</option>
+                    <option value="Supporter">Supporter/Test</option>
                     <option value="Manager">Manager</option>
                 </select>
             </div>
