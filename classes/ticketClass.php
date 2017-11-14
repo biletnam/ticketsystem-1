@@ -37,9 +37,11 @@ class TICKET
     public function getTicket($userID)
     {
         try {
-            $stmt = $this->db->prepare("INSERT INTO user_ticket(userID, ticketsID) VALUES (:userID, :ticketID)");
+
+            $stmt = $this->db->prepare("INSERT INTO user_ticket(userID, ticketsID) VALUES (:userID, $ticketID)");
 
             $stmt->bindparam(":userID", $userID);
+            $stmt->execute();
 
             return $stmt;
         } catch (PDOException $e) {
