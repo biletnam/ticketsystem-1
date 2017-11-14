@@ -1,4 +1,6 @@
-<!doctype html>
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{$title}</title>
+    <title><?php echo $this->scope["title"];?></title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -19,7 +21,6 @@
 <body>
 
 <div class="container">
-    Hallo Welt!
     <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Login</h2>
         <label for="email" class="sr-only">E-Mail Adresse</label>
@@ -38,4 +39,6 @@
 
 </div> <!-- /container -->
 </body>
-</html>
+</html><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>
