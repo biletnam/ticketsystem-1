@@ -35,16 +35,8 @@ if (isset($_POST['login'])) {
 
 
     if ($user->login($umail, $upass)) {
-        switch ($role) {
-            case 'Admin':
-                $user->redirect('dashboard-admin.php');
-                break;
-            case 'Manager':
-                $user->redirect('dashboard-manager.php');
-                break;
-            default:
                 $user->redirect('dashboard.php');
-        }
+
 
     } else {
         $status = 0;
