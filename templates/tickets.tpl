@@ -58,18 +58,18 @@
             </tr>
             </thead>
             <tbody>
+            {foreach $tickets}
             <tr>
-                <td></td>
+                <td>{$tickets.ticketID}</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
+            {/foreach}
             </tbody>
         </table>
-        {$ID}
-
 </main><!-- /.container -->
 
 

@@ -2,7 +2,7 @@
 /* template head */
 /* end template head */ ob_start(); /* template body */ ;
 '';// checking for modification in file:templates\\base.tpl
-if (!("1510687508" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
+if (!("1510687641" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -37,6 +37,13 @@ if (!("1510687508" == filemtime('templates//base.tpl'))) { ob_end_clean(); retur
             <li class="nav-item">
                 <a class="nav-link" href="tickets.php">Tickets</a>
             </li>
+            <?php if ((isset($this->scope["role"]) ? $this->scope["role"] : null) == 'Admin' || (isset($this->scope["role"]) ? $this->scope["role"] : null) == 'Manager') {
+?>
+                <li class="nav-item">
+                    <a class="nav-link" href="createuser.php">Nutzer erstellen</a>
+                </li>
+            <?php 
+}?>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout<i class="glyphicon glyphicon-log-out"></i></a>
             </li>

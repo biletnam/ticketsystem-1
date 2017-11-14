@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4e8473f-521b-4cff-ba10-5002ad0e50dc" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/createuser-admin.tpl" afterPath="$PROJECT_DIR$/templates/createuser.tpl" />
+    <list default="true" id="a4e8473f-521b-4cff-ba10-5002ad0e50dc" name="Default" comment="Tickets">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createuser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tickets.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ticktets.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.tpl" afterPath="$PROJECT_DIR$/templates/base.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/createuser.tpl" afterPath="$PROJECT_DIR$/templates/createuser.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tickets.tpl" afterPath="$PROJECT_DIR$/templates/tickets.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/eebf9c4a780e56583d5bd55207398488.d136.php" afterPath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/eebf9c4a780e56583d5bd55207398488.d136.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,43 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userClass.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/userClass.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <marker date="1510681488272" expanded="true" signature="401:508" ph="INSERT INTO user... " />
-                <marker date="1510681488272" expanded="true" signature="1011:1049" ph="SELECT * FRO... user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/session.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="289">
               <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding>
                 <marker date="1510686335883" expanded="true" signature="564:601" ph="SELECT * FRO... user" />
@@ -65,11 +36,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbconfig.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbconfig.php">
+      <file leaf-file-name="createuser.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/createuser.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createuser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createuser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="40" />
+              <folding>
+                <marker date="1510688067104" expanded="true" signature="436:476" ph="SELECT * FRO... user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -78,10 +71,42 @@
       <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="29" />
               <folding>
                 <marker date="1510681488295" expanded="true" signature="436:476" ph="SELECT * FRO... user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="37" column="78" lean-forward="false" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="89" lean-forward="true" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tickets.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tickets.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding>
+                <marker date="1510689616947" expanded="true" signature="474:514" ph="SELECT * FRO... user" />
               </folding>
             </state>
           </provider>
@@ -90,29 +115,25 @@
       <file leaf-file-name="tickets.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/tickets.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="646">
+              <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+      <file leaf-file-name="ticketClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/ticketClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="37" column="78" lean-forward="false" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
-              <folding />
+            <state relative-caret-position="-1071">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1510681488271" expanded="true" signature="481:555" ph="INSERT INTO tickets... " />
+                <marker date="1510681488271" expanded="true" signature="1085:1181" ph="SELECT ticke... tickets" />
+                <marker date="1510681488271" expanded="true" signature="1714:1783" ph="UPDATE ticke... " />
+                <marker date="1510681488271" expanded="true" signature="2241:2262" ph="SELECT * FRO... tickets" />
+                <marker date="1510681488271" expanded="true" signature="2611:2672" ph="UPDATE ticke... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,13 +147,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/templates/index.tpl" />
-        <option value="$PROJECT_DIR$/templates/tickets.tpl" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login_failed.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/session.php" />
         <option value="$PROJECT_DIR$/templates/dashboard.tpl" />
         <option value="$PROJECT_DIR$/templates/base.tpl" />
+        <option value="$PROJECT_DIR$/templates/createuser.tpl" />
+        <option value="$PROJECT_DIR$/createuser.php" />
+        <option value="$PROJECT_DIR$/templates/tickets.tpl" />
+        <option value="$PROJECT_DIR$/tickets.php" />
       </list>
     </option>
   </component>
@@ -221,7 +245,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510682191218</updated>
-      <workItem from="1510682193558" duration="4452000" />
+      <workItem from="1510682193558" duration="6439000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1510682559807</created>
@@ -241,7 +265,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4452000" />
+    <option name="totallyTimeSpent" value="6439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -299,14 +323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="89" lean-forward="true" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login_failed.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -331,26 +347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticktets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1510681488327" expanded="true" signature="253:293" ph="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1510681488295" expanded="true" signature="436:476" ph="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -363,14 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tickets.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -394,9 +382,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard-admin.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/createuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/createuser.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="289">
           <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding>
             <marker date="1510686335883" expanded="true" signature="564:601" ph="SELECT * FRO... user" />
@@ -408,25 +420,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard-admin.tpl">
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <marker date="1510681488295" expanded="true" signature="436:476" ph="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="89" lean-forward="true" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="578">
           <caret line="37" column="78" lean-forward="false" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <marker date="1510688067104" expanded="true" signature="436:476" ph="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ticketClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510681488271" expanded="true" signature="481:555" ph="INSERT INTO tickets... " />
+            <marker date="1510681488271" expanded="true" signature="1085:1181" ph="SELECT ticke... tickets" />
+            <marker date="1510681488271" expanded="true" signature="1714:1783" ph="UPDATE ticke... " />
+            <marker date="1510681488271" expanded="true" signature="2241:2262" ph="SELECT * FRO... tickets" />
+            <marker date="1510681488271" expanded="true" signature="2611:2672" ph="UPDATE ticke... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tickets.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="62" column="36" lean-forward="false" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tickets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <marker date="1510689616947" expanded="true" signature="474:514" ph="SELECT * FRO... user" />
+          </folding>
         </state>
       </provider>
     </entry>
