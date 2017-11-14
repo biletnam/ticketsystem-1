@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Nov 2017 um 16:45
+-- Erstellungszeit: 14. Nov 2017 um 17:49
 -- Server-Version: 10.1.13-MariaDB
 -- PHP-Version: 5.6.21
 
@@ -44,7 +44,21 @@ INSERT INTO `login_attempts` (`user_id`, `time`, `status`) VALUES
 ('asdfasdf@tasdasdf', '2017-11-13 13:46:42', 0),
 ('admin@surfmedia.de', '2017-11-13 13:58:21', 1),
 ('admin@surfmedia.de', '2017-11-13 14:13:15', 1),
-('manager@surfmedia.de', '2017-11-13 14:35:39', 1);
+('manager@surfmedia.de', '2017-11-13 14:35:39', 1),
+('admin@surfmedia.de', '2017-11-14 11:16:00', 1),
+('admin@surfmedia.de', '2017-11-14 11:16:01', 0),
+('admin@surfmedia.de', '2017-11-14 11:16:06', 1),
+('admin@surfmedia.de', '2017-11-14 12:15:20', 1),
+('admin@surfmedia.de', '2017-11-14 13:40:15', 1),
+('admin@surfmedia.de', '2017-11-14 13:42:17', 1),
+('admin@surfmedia.de', '2017-11-14 15:03:57', 1),
+('admin@surfmedia.de', '2017-11-14 15:25:25', 1),
+('asdfasdf@test', '2017-11-14 16:23:07', 1),
+('asdfasdf@test', '2017-11-14 16:23:07', 0),
+('asdfasdf@tasdasdf', '2017-11-14 16:26:41', 1),
+('asdfasdf@tasdasdf', '2017-11-14 16:26:41', 0),
+('asdfasdf@tasdasdf', '2017-11-14 16:27:04', 1),
+('asdfasdf@tasdasdf', '2017-11-14 16:27:04', 0);
 
 -- --------------------------------------------------------
 
@@ -110,7 +124,7 @@ CREATE TABLE `tickets` (
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `message` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isAssignedTo` int(12) NOT NULL DEFAULT '0',
   `isFinished` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -120,16 +134,9 @@ CREATE TABLE `tickets` (
 --
 
 INSERT INTO `tickets` (`ticketsID`, `name`, `email`, `message`, `created`, `isAssignedTo`, `isFinished`) VALUES
-(2, 'Christoph', 'christoph.sczigiol@gmail.com', 'Hallo ich bin ein Test', '2017-11-08 12:45:55', 0, 0),
-(3, 'asdf', 'asdf', 'asdf', '2017-11-08 12:45:55', 0, 0),
-(5, 'asdf', 'asdf', 'asdf', '2017-11-08 13:32:57', 0, 0),
-(6, 'test', 'test', 'SELECT * FROM users where id=1; DROP TABLE user;', '2017-11-08 15:31:20', 0, 0),
-(12, 'asdfasdf', 'asdfasdf@test', 'asdfasdf', '2017-11-10 09:47:15', 0, 0),
-(13, 'asdfa', 'asdfasdf@test', '&lt;b&gt;test&lt;/b&gt;', '2017-11-10 09:47:32', 0, 0),
-(14, 'asdfas', 'test@test', '&lt;script&gt;alert(&quot;Huhu&quot;)&lt;/script&gt;', '2017-11-10 09:48:58', 0, 0),
-(15, 'Test', 'asdfljka@test', 'test', '2017-11-10 10:31:49', 0, 0),
-(16, 'asdf', 'asdfasdf@test', 'wqwerqwersadfadf', '2017-11-10 13:46:01', 0, 0),
-(17, 'asd', 'asd@test', 'asdasd', '2017-11-13 13:29:39', 0, 0);
+(22, 'Christoph Sczigiol', 'christoph.sczigiol@gmail.com', 'Das ist ein Test-Ticket!', '2017-11-14 15:23:36', 12, 0),
+(23, 'Test', 'test@test', 'tweasdfasdfad', '2017-11-14 15:28:09', 12, 0),
+(24, 'Malte Klaumann', 'm.klaumann@icloud.de', 'Ich bin zu dumm einen Laptop mit Arch aufzusetzen. :(((', '2017-11-14 16:10:30', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -159,24 +166,6 @@ INSERT INTO `user` (`userID`, `email`, `password`, `firstname`, `lastname`, `rol
 (14, 'supporter1@surfmedia.de', '$2y$10$L8N8YGR0POvpKqba7SGzoe9ueAAqnORdPkUBLT5SEEuCpw8Lto5bi', 'Peter', 'Schmidt', 'Supporter', '2017-11-09 15:17:18', NULL, NULL),
 (15, 'supporter2@surfmedia.de', '$2y$10$TRsEeU3Dv1S.OsNPBtX2kuVs3y1FgEL2cXBX0IBCX.zClk5QXisU2', 'Hans', 'Petersen', 'Supporter', '2017-11-09 15:18:47', NULL, NULL),
 (16, 'supporter3@surfmedia.de', '$2y$10$4tqjNK41ysLx.7D9izFyKe534CRimE0iGOY857cLW7flyaJpwmsWy', 'Ulrich', 'JÃ¼rgensen', 'Supporter', '2017-11-09 15:57:38', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `user_ticket`
---
-
-CREATE TABLE `user_ticket` (
-  `userID` int(11) NOT NULL,
-  `ticketsID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Daten für Tabelle `user_ticket`
---
-
-INSERT INTO `user_ticket` (`userID`, `ticketsID`) VALUES
-(12, 2);
 
 --
 -- Indizes der exportierten Tabellen
@@ -216,12 +205,6 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indizes für die Tabelle `user_ticket`
---
-ALTER TABLE `user_ticket`
-  ADD PRIMARY KEY (`ticketsID`);
-
---
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -234,7 +217,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT für Tabelle `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `ticketsID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ticketsID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
