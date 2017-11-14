@@ -1,4 +1,6 @@
-<!doctype html>
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -58,16 +60,28 @@
             </tr>
             </thead>
             <tbody>
-                {foreach $tickets ticket}
+                <?php 
+$_fh0_data = (isset($this->scope["tickets"]) ? $this->scope["tickets"] : null);
+if ($this->isTraversable($_fh0_data) == true)
+{
+	foreach ($_fh0_data as $this->scope['ticket'])
+	{
+/* -- foreach start output */
+?>
+
             <tr>
-                <td>{$ticket.ticketsID}</td>
-                <td>{$ticket.name}</td>
-                <td>{$ticket.email}</td>
-                <td>{$ticket.message}</td>
+                <td><?php echo $this->scope["ticket"]["ticketsID"];?></td>
+                <td><?php echo $this->scope["ticket"]["name"];?></td>
+                <td><?php echo $this->scope["ticket"]["email"];?></td>
+                <td><?php echo $this->scope["ticket"]["message"];?></td>
                 <td>($ticket.isAssignedTo}</td>
-                <td>{$ticket.isFinished}</td>
+                <td><?php echo $this->scope["ticket"]["isFinished"];?></td>
             </tr>
-            {/foreach}
+            <?php 
+/* -- foreach end output */
+	}
+}?>
+
             </tbody>
         </table>
 </main><!-- /.container -->
@@ -83,4 +97,6 @@
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"></script>
 </body>
-</html>
+</html><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>
