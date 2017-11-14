@@ -6,7 +6,7 @@ include_once 'dbconfig.php';
 $core = new Dwoo\Core();
 
 // Templatefile
-$tpl = new Dwoo\Template\File('templates/tickets.tpl');
+$tpl = new Dwoo\Template\File('templates/ticketsdetail.tpl');
 
 $page = array();
 $page['title']   = 'Ticketsystem | Dashboard';
@@ -15,15 +15,17 @@ if (!$user->is_loggedin()) {
     $user->redirect('index.php');
 }
 
-$user = $user->getUser();
-$user=$user->fetch(PDO::FETCH_ASSOC);
+$user_id = $_SESSION['user_session'];
+$stmt = $DB_con->prepare("SELECT * FROM user WHERE userID=:user_id");
+$stmt->execute(array(":user_id"=>$user_id));
+$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
 
 $tickets = $ticket->getAllTickets();
 $tickets = $tickets->fetchAll(PDO::FETCH_ASSOC);
 
 
-$data = array('user'=>$user, 'tickets'=>$tickets);
+$data = array('user'=>$userRow, 'tickets'=>$tickets);
 
 echo $core->get($tpl, $data);
 

@@ -1,6 +1,8 @@
 <?php
 /* template head */
-/* end template head */ ob_start(); /* template body */ ?><!doctype html>
+/* end template head */ ob_start(); /* template body */ ;
+'';// checking for modification in file:templates\\base.tpl
+if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Ticketsystem | Lite</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -35,21 +37,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="tickets.php">Tickets</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createuser.php">User anlegen</a>
-            </li>
+            <?php if ((isset($this->scope["user"]["role"]) ? $this->scope["user"]["role"]:null) == 'Admin' || (isset($this->scope["user"]["role"]) ? $this->scope["user"]["role"]:null) == 'Manager') {
+?>
+                <li class="nav-item">
+                    <a class="nav-link" href="createuser.php">Nutzer erstellen</a>
+                </li>
+            <?php 
+}?>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout<i class="glyphicon glyphicon-log-out"></i></a>
             </li>
         </ul>
     </div>
 </nav>
-<?php echo $this->scope["tickets"]["ticketsID"];?>
 
 <main role="main" class="container">
+    <main role="main" class="container">
     <div class="container">
         <h2>Alle Tickets</h2>
-        <table class="table">
+        <table class="table table-sm table-striped">
             <thead>
             <tr>
                 <th>ID</th>
@@ -61,7 +67,7 @@
             </tr>
             </thead>
             <tbody>
-                <?php 
+            <?php 
 $_fh0_data = (isset($this->scope["tickets"]) ? $this->scope["tickets"] : null);
 if ($this->isTraversable($_fh0_data) == true)
 {
@@ -69,31 +75,28 @@ if ($this->isTraversable($_fh0_data) == true)
 	{
 /* -- foreach start output */
 ?>
-
             <tr>
-                <td><?php echo $this->scope["ticket"]["ticketsID"];?></td>
+                <td><a href="/ticketdetail.php?id=<?php echo $this->scope["ticket"]["ticketsID"];?>"><?php echo $this->scope["ticket"]["ticketsID"];?></td>
                 <td><?php echo $this->scope["ticket"]["name"];?></td>
                 <td><?php echo $this->scope["ticket"]["email"];?></td>
                 <td><?php echo $this->scope["ticket"]["message"];?></td>
-                <td>($ticket.isAssignedTo}</td>
+                <td><?php echo $this->scope["ticket"]["isAssignedTo"];?></td>
                 <td><?php echo $this->scope["ticket"]["isFinished"];?></td>
             </tr>
             <?php 
 /* -- foreach end output */
 	}
 }?>
-
             </tbody>
         </table>
+</main><!-- /.container -->
 </main><!-- /.container -->
 
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"><\/script>')</script>
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"></script>

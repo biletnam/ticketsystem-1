@@ -67,6 +67,19 @@ class user
         header("Location: $url");
     }
 
+    public function getUser()
+    {
+        $user_id = $_SESSION['user_session'];
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM user WHERE userID=:user_id");
+            $stmt->execute(array(":user_id" => $user_id));
+
+            return $stmt;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function logout()
     {
         session_destroy();

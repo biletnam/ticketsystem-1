@@ -2,7 +2,7 @@
 /* template head */
 /* end template head */ ob_start(); /* template body */ ;
 '';// checking for modification in file:templates\\base.tpl
-if (!("1510687641" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
+if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -32,12 +32,12 @@ if (!("1510687641" == filemtime('templates//base.tpl'))) { ob_end_clean(); retur
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="tickets.php">Tickets</a>
             </li>
-            <?php if ((isset($this->scope["role"]) ? $this->scope["role"] : null) == 'Admin' || (isset($this->scope["role"]) ? $this->scope["role"] : null) == 'Manager') {
+            <?php if ((isset($this->scope["user"]["role"]) ? $this->scope["user"]["role"]:null) == 'Admin' || (isset($this->scope["user"]["role"]) ? $this->scope["user"]["role"]:null) == 'Manager') {
 ?>
                 <li class="nav-item">
                     <a class="nav-link" href="createuser.php">Nutzer erstellen</a>
@@ -55,9 +55,9 @@ if (!("1510687641" == filemtime('templates//base.tpl'))) { ob_end_clean(); retur
         
 
     <div class="starter-template">
-        <h1>Hallo <?php echo $this->scope["firstname"];?> <?php echo $this->scope["lastname"];?></h1>
-        Sie sind angemeldet als <?php echo $this->scope["role"];?>. <br>
-        Ihre UserID lautet: <?php echo $this->scope["userID"];?>. <br>
+        <h1>Hallo <?php echo $this->scope["user"]["firstname"];?> <?php echo $this->scope["user"]["lastname"];?></h1>
+        Sie sind angemeldet als <?php echo $this->scope["user"]["role"];?>. <br>
+        Ihre UserID lautet: <?php echo $this->scope["user"]["userID"];?>. <br>
         <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
     </div>
 </main><!-- /.container -->
