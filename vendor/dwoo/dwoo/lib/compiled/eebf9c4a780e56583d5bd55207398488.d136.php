@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ;
+'';// checking for modification in file:templates\\base.tpl
+if (!("1510687508" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>{block "title"}Ticketsystem{/block}</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -33,11 +37,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="tickets.php">Tickets</a>
             </li>
-            {if $role == Admin || $role == Manager}
-                <li class="nav-item">
-                    <a class="nav-link" href="createuser.php">Nutzer erstellen</a>
-                </li>
-            {/if}
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout<i class="glyphicon glyphicon-log-out"></i></a>
             </li>
@@ -46,8 +45,14 @@
 </nav>
 
 <main role="main" class="container">
-    {block "content"}
-    {/block}
+        
+
+    <div class="starter-template">
+        <h1>Hallo <?php echo $this->scope["firstname"];?> <?php echo $this->scope["lastname"];?></h1>
+        Sie sind angemeldet als <?php echo $this->scope["role"];?>. <br>
+        Ihre UserID lautet: <?php echo $this->scope["userID"];?>. <br>
+        <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
+    </div>
 </main><!-- /.container -->
 
 
@@ -59,4 +64,6 @@
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"></script>
 </body>
-</html>
+</html><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>

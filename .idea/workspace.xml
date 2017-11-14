@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4e8473f-521b-4cff-ba10-5002ad0e50dc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/createuser-admin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/createuser-manager.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard-admin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard-manager.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard-supporter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/login_failed.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tickets-manager.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/tickets-admin.tpl" afterPath="$PROJECT_DIR$/templates/tickets.tpl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tickets-admin.php" afterPath="$PROJECT_DIR$/ticktets.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/createuser-admin.tpl" afterPath="$PROJECT_DIR$/templates/createuser.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/session.php" afterPath="$PROJECT_DIR$/session.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.tpl" afterPath="$PROJECT_DIR$/templates/dashboard.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/62c31206291b4c66ddb301db22000900.d136.php" afterPath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/62c31206291b4c66ddb301db22000900.d136.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.tpl" afterPath="$PROJECT_DIR$/templates/base.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding>
                 <marker date="1510686335883" expanded="true" signature="564:601" ph="SELECT * FRO... user" />
                 <marker date="1510686335883" expanded="true" signature="772:844" ph="INSERT INTO login_attempts... " />
@@ -99,28 +87,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createticket.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createticket.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ticktets.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ticktets.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1510681488327" expanded="true" signature="253:293" ph="SELECT * FRO... user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tickets.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/tickets.tpl">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,8 +100,18 @@
       <file leaf-file-name="dashboard.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="37" column="78" lean-forward="false" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -154,8 +130,9 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login_failed.php" />
         <option value="$PROJECT_DIR$/logout.php" />
-        <option value="$PROJECT_DIR$/templates/dashboard.tpl" />
         <option value="$PROJECT_DIR$/session.php" />
+        <option value="$PROJECT_DIR$/templates/dashboard.tpl" />
+        <option value="$PROJECT_DIR$/templates/base.tpl" />
       </list>
     </option>
   </component>
@@ -244,7 +221,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510682191218</updated>
-      <workItem from="1510682193558" duration="3893000" />
+      <workItem from="1510682193558" duration="4452000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1510682559807</created>
@@ -253,11 +230,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510682559808</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dashboard angepasst">
+      <created>1510687099811</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1510687099811</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3893000" />
+    <option name="totallyTimeSpent" value="4452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -291,7 +275,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Dashboard angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard angepasst" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -302,14 +287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard-admin.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -398,14 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/userClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -427,13 +396,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding>
             <marker date="1510686335883" expanded="true" signature="564:601" ph="SELECT * FRO... user" />
             <marker date="1510686335883" expanded="true" signature="772:844" ph="INSERT INTO login_attempts... " />
             <marker date="1510686335883" expanded="true" signature="1039:1111" ph="INSERT INTO login_attempts... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard-admin.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="78" lean-forward="false" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
