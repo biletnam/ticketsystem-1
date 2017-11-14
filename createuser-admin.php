@@ -16,7 +16,7 @@ $core = new Dwoo\Core();
 $tpl = new Dwoo\Template\File('templates/createuser-admin.tpl');
 
 $page = array();
-$page['title']   = 'Ticketsystem | User erstellen';
+$page['title'] = 'Ticketsystem | User erstellen';
 
 if (isset($_POST['signup'])) {
     $umail = trim($_POST['umail']);
@@ -26,17 +26,9 @@ if (isset($_POST['signup'])) {
     $role = trim($_POST['role']);
 
     try {
-        $stmt = $DB_con->prepare("SELECT email FROM user WHERE email=:umail");
-        $stmt->execute(array(':umail' => $umail));
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user->createUser($umail, $upass, $fname, $lname, $role);
+        $user->redirect('dashboard-admin.php');
 
-        if ($row["email"] == §umail) {
-            $error[] = "Die Mailadresse ist bereits registriert.";
-        } else {
-            if ($user->createUser($umail, $upass, $fname, $lname, $role)) {
-                $user->redirect('dashboard-admin.php');
-            }
-        }
     } catch (PDOException $e) {
         echo $e->getMessage();
     }

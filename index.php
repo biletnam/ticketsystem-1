@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 require_once 'dbconfig.php';
 
 
+
 // Create the controller, it is reusable and can render multiple templates
 $core = new Dwoo\Core();
 
@@ -46,10 +47,10 @@ if (isset($_POST['login'])) {
         }
 
     } else {
-        echo 'Login fehlgeschlagen';
         $status = 0;
         $attempt = $DB_con->prepare("INSERT INTO login_attempts(user_id, status) VALUES ('$umail', '$status')");
         $attempt->execute();
+        header('Location: index.php?error=1');
     }
 }
 

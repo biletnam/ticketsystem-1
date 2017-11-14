@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: praktikant
- * Date: 07.11.2017
- * Time: 14:43
+ *
+ * Die Klasse represäntiert Tickets.
+ *
+ * @author Christoph Sczigiol
+ * @version 1.0
+ *
  */
 
 class TICKET
@@ -15,6 +17,15 @@ class TICKET
         $this->db = $DB_con;
     }
 
+    /**
+     *
+     * Erstellen eines Tickets.
+     *
+     * @param $name
+     * @param $email
+     * @param $message
+     * @return mixed
+     */
     public function createTicket($name, $email, $message)
     {
         try {
@@ -34,13 +45,46 @@ class TICKET
         }
     }
 
-    public function getTicket($userID)
+    /**
+     *
+     * Sucht das älteste nicht zugewiesen Ticket aus der Datenbank.
+     *
+     * @return string
+     */
+
+    public function get_oldest_unass_ticket()
+    {
+        try {
+                $stmt = $this->db->prepare("SELECT ticketsID FROM tickets WHERE isAssignedTo = 0 AND isFinished = 0 ORDER BY created LIMIT 1");
+                $stmt->execute();
+
+                $ticketRow = $stmt->fetch(PDO::FETCH_ASSOC);
+                $ticketID = trim($ticketRow['ticketsID']);
+
+                return $ticketID;
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    /**
+     *
+     * Weist ein Ticket einem User zu.
+     *
+     * @param $userID
+     * @param $ticketsID
+     * @return mixed
+     */
+
+    public function getTicket($userID, $ticketsID)
     {
         try {
 
-            $stmt = $this->db->prepare("INSERT INTO user_ticket(userID, ticketsID) VALUES (:userID, $ticketID)");
+            $stmt = $this->db->prepare("UPDATE tickets SET isAssignedTo = :userID WHERE ticketsID = :ticketID");
 
             $stmt->bindparam(":userID", $userID);
+            $stmt->bindparam(":ticketID", $ticketsID);
             $stmt->execute();
 
             return $stmt;
@@ -49,14 +93,41 @@ class TICKET
         }
     }
 
+    /**
+     *
+     * Gibt alle in der DB vorhandenen Tickets zurück.
+     *
+     * @return mixed
+     */
+
+    public function getAllTickets()
+    {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM tickets");
+            $stmt->execute();
+
+            return $stmt;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+    /**
+     *
+     * Schließt ein bearbeitetes Ticket.
+     *
+     * @param $ticketID
+     */
+
     public function closeTicket($ticketID)
     {
         try {
             $stmt = $this->db->prepare('UPDATE tickets SET isFinished = 1 WHERE ticketsID = :ticketID');
-            $stmt -> bindparam(":ticketID", $ticketID);
+            $stmt->bindparam(":ticketID", $ticketID);
             $stmt->execute();
         } catch (PDOException $e) {
-
+            echo $e->getMessage();
         }
 
     }

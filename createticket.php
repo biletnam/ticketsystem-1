@@ -21,10 +21,14 @@ if (isset($_POST['createTicket'])) {
     $name = trim($_POST['tname']);
     $email = trim($_POST['temail']);
     $message = trim($_POST['tmessage']);
+    $name = htmlspecialchars($name);
+    $email = htmlspecialchars($email);
     $message = htmlspecialchars($message);
 
     try {
         $ticket->createTicket($name, $email, $message);
+        header('Location: /ticketsystem/createticket.php');
+        echo 'Erfolgreich';
     }
     catch (PDOException $e) {
         echo $e->getMessage();

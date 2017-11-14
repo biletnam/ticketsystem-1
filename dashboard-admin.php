@@ -18,15 +18,16 @@ $user_id = $_SESSION['user_session'];
 $stmt = $DB_con->prepare("SELECT * FROM user WHERE userID=:user_id");
 $stmt->execute(array(":user_id" => $user_id));
 $userRow = $stmt->fetch(PDO::FETCH_ASSOC);
+$userID = trim($userRow['userID']);
+
+$ticketID = $ticket->get_oldest_unass_ticket();
+
+print_r($ticketID);
 
 if (isset($_POST['getTicket'])) {
-    $ticketID = trim($ticketRow['ticketsID']);
-    $userID = trim($userRow['userID']);
-
     try {
-        $ticket->getTicket($userID);
+        $ticket->getTicket($userID, $ticketID);
         $user->redirect('dashboard-admin.php');
-
         echo ('Erfolgreich');
 
     } catch (PDOException $e) {
