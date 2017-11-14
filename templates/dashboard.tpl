@@ -33,9 +33,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="tickets.php">Tickets</a>
             </li>
+            {if $role == Admin || $role == Manager}
             <li class="nav-item">
-                <a class="nav-link" href="logout.php?logout=true">Logout<i class="glyphicon glyphicon-log-out"></i></a>
+                <a class="nav-link" href="createuser.php">Nutzer anlegen</a>
             </li>
+            {/if}
+            <form>
+            <li class="nav-item">
+                <a name="logout" class="nav-link" href="logout.php">Logout<i class="glyphicon glyphicon-log-out"></i></a>
+            </li>
+            </form>
         </ul>
     </div>
 </nav>

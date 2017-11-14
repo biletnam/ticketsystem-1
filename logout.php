@@ -5,9 +5,9 @@ $user_logout = new USER();
 
 if($user_logout->is_loggedin()!="")
 {
-    $user_logout->redirect('home.php');
+    $user_logout->redirect('index.php');
 }
-if(isset($_GET['logout']) && $_GET['logout']=="true")
+if(isset($_GET['logout']))
 {
     $user_logout->logout();
     $user_logout->redirect('index.php');

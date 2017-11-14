@@ -2,6 +2,7 @@
 
 session_start();
 
+
 require_once 'classes/userClass.php';
 $session = new USER();
 
