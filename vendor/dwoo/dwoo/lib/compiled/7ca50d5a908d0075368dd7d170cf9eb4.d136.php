@@ -44,6 +44,7 @@
         </ul>
     </div>
 </nav>
+<?php echo $this->scope["tickets"]["ticketsID"];?>
 
 <main role="main" class="container">
     <div class="container">

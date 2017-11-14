@@ -42,7 +42,7 @@
         </ul>
     </div>
 </nav>
-
+{$tickets.ticketsID}
 <main role="main" class="container">
     <div class="container">
         <h2>Alle Tickets</h2>

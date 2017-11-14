@@ -23,9 +23,8 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
 $user = array('firstname'=>$userRow['firstname'], 'lastname'=>$userRow['lastname'], 'role'=>$userRow['role'], 'userID'=>$userRow['userID']);
 $tickets = $ticket->getAllTickets();
-$tickets=$tickets->fetchAll(PDO::FETCH_ASSOC);
+$tickets = $tickets->fetchAll(PDO::FETCH_ASSOC);
 
-// $tickets = array('ticketID'=>$ticketsRow['ticketsID']);
 
 $data = array('user'=>$user, 'tickets'=>$tickets);
 
