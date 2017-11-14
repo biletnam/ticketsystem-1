@@ -1,4 +1,6 @@
-<!doctype html>
+<?php
+/* template head */
+/* end template head */ ob_start(); /* template body */ ?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -42,7 +44,7 @@
         </ul>
     </div>
 </nav>
-{$tickets.ticketsID}
+<?php echo $this->scope["tickets"]["ticketsID"];?>
 <main role="main" class="container">
     <div class="container">
         <h2>Alle Tickets</h2>
@@ -81,4 +83,6 @@
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"></script>
 </body>
-</html>
+</html><?php  /* end template body */
+return $this->buffer . ob_get_clean();
+?>
