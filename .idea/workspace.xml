@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4e8473f-521b-4cff-ba10-5002ad0e50dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticketsdetail.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ticketsdetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/userClass.php" afterPath="$PROJECT_DIR$/classes/userClass.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.tpl" afterPath="$PROJECT_DIR$/templates/base.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.tpl" afterPath="$PROJECT_DIR$/templates/dashboard.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tickets.tpl" afterPath="$PROJECT_DIR$/templates/tickets.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tickets.php" afterPath="$PROJECT_DIR$/tickets.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/7ca50d5a908d0075368dd7d170cf9eb4.d136.php" afterPath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/7ca50d5a908d0075368dd7d170cf9eb4.d136.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/eebf9c4a780e56583d5bd55207398488.d136.php" afterPath="$PROJECT_DIR$/vendor/dwoo/dwoo/lib/compiled/eebf9c4a780e56583d5bd55207398488.d136.php" />
-    </list>
+    <list default="true" id="a4e8473f-521b-4cff-ba10-5002ad0e50dc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tickets.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tickets.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tickets.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="408">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ticketsdetail.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ticketsdetail.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ticketsdetail.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -246,7 +234,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510682191218</updated>
-      <workItem from="1510682193558" duration="9650000" />
+      <workItem from="1510682193558" duration="9881000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1510682559807</created>
@@ -273,11 +261,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9650000" />
+    <option name="totallyTimeSpent" value="9881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -472,16 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticketsdetail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <marker date="1510692549401" expanded="true" signature="442:482" ph="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/userClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="674">
@@ -512,9 +489,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tickets.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticketsdetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <marker date="1510692549401" expanded="true" signature="442:482" ph="SELECT * FRO... user" />
+          </folding>
         </state>
       </provider>
     </entry>
