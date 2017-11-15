@@ -6,6 +6,8 @@
         <h1>Hallo {$user.firstname} {$user.lastname}</h1>
         Sie sind angemeldet als {$user.role}. <br>
         Ihre UserID lautet: {$user.userID}. <br>
-        <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
+        <form method="post">
+        <button name="getTicket" type="submit" class="btn btn-primary">Ticket erhalten</button>
+        </form>
     </div>
 {/block}

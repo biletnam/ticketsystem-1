@@ -100,6 +100,18 @@ class TICKET
      * @return mixed
      */
 
+    public function getTicketDetails($ticketsID) {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM tickets WHERE ticketsID = :ticketID");
+            $stmt->bindparam(":ticketID", $ticketsID);
+            $stmt->execute();
+
+            return $stmt;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function getAllTickets()
     {
         try {
@@ -107,6 +119,30 @@ class TICKET
             $stmt->execute();
 
             return $stmt;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function getAssignedTicket($userID) {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM tickets WHERE isAssignedTo = :userID");
+            $stmt->bindparam(":userID", $userID);
+            $stmt->execute();
+
+            return $stmt;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function editTicket($ticketID, $message) {
+        try {
+            $stmt = $this->db->prepare("UPDATE tickets SET message = :message WHERE ticketsID = :ticketID");
+            $stmt->bindparam(":ticketID", $ticketID);
+            $stmt->bindparam(":message", $message);
+            $stmt->execute();
+
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
@@ -123,9 +159,10 @@ class TICKET
     public function closeTicket($ticketID)
     {
         try {
-            $stmt = $this->db->prepare('UPDATE tickets SET isFinished = 1 WHERE ticketsID = :ticketID');
+            $stmt = $this->db->prepare('UPDATE tickets SET isFinished = 1, isAssignedTo = 0 WHERE ticketsID = :ticketID');
             $stmt->bindparam(":ticketID", $ticketID);
             $stmt->execute();
+
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

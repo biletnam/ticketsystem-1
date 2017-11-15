@@ -19,7 +19,6 @@
 <body>
 
 <div class="container">
-    Hallo Welt! Noch ien test
     <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Login</h2>
         <label for="email" class="sr-only">E-Mail Adresse</label>

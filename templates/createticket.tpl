@@ -26,8 +26,6 @@
             <label>Nachricht:</label>
             <textarea name="tmessage" class="form-control" rows="5" required></textarea>
         </div>
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
         <div class="form-group">
             <button type="submit" class="btn btn-block btn-primary" name="createTicket">
                 <i class="glyphicon glyphicon-open-file"></i> Ticket einsenden

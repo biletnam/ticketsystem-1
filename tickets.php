@@ -22,8 +22,12 @@ $user=$user->fetch(PDO::FETCH_ASSOC);
 $tickets = $ticket->getAllTickets();
 $tickets = $tickets->fetchAll(PDO::FETCH_ASSOC);
 
+$userTicket = $ticket->getAssignedTicket($user['userID']);
+$userTicket = $userTicket->fetchAll(PDO::FETCH_ASSOC);
 
-$data = array('user'=>$user, 'tickets'=>$tickets);
+
+
+$data = array('user'=>$user, 'tickets'=>$tickets, 'userTicket'=>$userTicket);
 
 echo $core->get($tpl, $data);
 

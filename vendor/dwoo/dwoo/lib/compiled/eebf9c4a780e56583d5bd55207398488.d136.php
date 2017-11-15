@@ -2,7 +2,7 @@
 /* template head */
 /* end template head */ ob_start(); /* template body */ ;
 '';// checking for modification in file:templates\\base.tpl
-if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
+if (!("1510754750" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -58,7 +58,9 @@ if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); retur
         <h1>Hallo <?php echo $this->scope["user"]["firstname"];?> <?php echo $this->scope["user"]["lastname"];?></h1>
         Sie sind angemeldet als <?php echo $this->scope["user"]["role"];?>. <br>
         Ihre UserID lautet: <?php echo $this->scope["user"]["userID"];?>. <br>
-        <button name="getTicket" type="button" class="btn btn-primary">Ticket erhalten</button>
+        <form method="post">
+        <button name="getTicket" type="submit" class="btn btn-primary">Ticket erhalten</button>
+        </form>
     </div>
 </main><!-- /.container -->
 

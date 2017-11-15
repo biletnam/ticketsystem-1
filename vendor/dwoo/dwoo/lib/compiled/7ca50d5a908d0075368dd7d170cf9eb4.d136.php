@@ -2,7 +2,7 @@
 /* template head */
 /* end template head */ ob_start(); /* template body */ ;
 '';// checking for modification in file:templates\\base.tpl
-if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
+if (!("1510754750" == filemtime('templates//base.tpl'))) { ob_end_clean(); return false; };?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -54,6 +54,47 @@ if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); retur
 <main role="main" class="container">
     <main role="main" class="container">
     <div class="container">
+        <?php if ((isset($this->scope["user"]["role"]) ? $this->scope["user"]["role"]:null) == 'Supporter') {
+?>
+        <h2>Ihr Ticket</h2>
+        <table class="table table-sm table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>Nachricht</th>
+                <th>Zugewiesen an</th>
+                <th>Beendet</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php 
+$_fh0_data = (isset($this->scope["userTicket"]) ? $this->scope["userTicket"] : null);
+if ($this->isTraversable($_fh0_data) == true)
+{
+	foreach ($_fh0_data as $this->scope['userTicket'])
+	{
+/* -- foreach start output */
+?>
+                <tr>
+                    <td><a href="/ticketsystem/ticketdetail.php?id=<?php echo $this->scope["userTicket"]["ticketsID"];?>"><?php echo $this->scope["userTicket"]["ticketsID"];?></td>
+                    <td><?php echo $this->scope["userTicket"]["name"];?></td>
+                    <td><?php echo $this->scope["userTicket"]["email"];?></td>
+                    <td><?php echo $this->scope["userTicket"]["message"];?></td>
+                    <td><?php echo $this->scope["userTicket"]["isAssignedTo"];?></td>
+                    <td><?php echo $this->scope["userTicket"]["isFinished"];?></td>
+                </tr>
+            <?php 
+/* -- foreach end output */
+	}
+}?>
+            </tbody>
+        </table>
+        <?php 
+}
+else {
+?>
         <h2>Alle Tickets</h2>
         <table class="table table-sm table-striped">
             <thead>
@@ -68,15 +109,15 @@ if (!("1510692184" == filemtime('templates//base.tpl'))) { ob_end_clean(); retur
             </thead>
             <tbody>
             <?php 
-$_fh0_data = (isset($this->scope["tickets"]) ? $this->scope["tickets"] : null);
-if ($this->isTraversable($_fh0_data) == true)
+$_fh1_data = (isset($this->scope["tickets"]) ? $this->scope["tickets"] : null);
+if ($this->isTraversable($_fh1_data) == true)
 {
-	foreach ($_fh0_data as $this->scope['ticket'])
+	foreach ($_fh1_data as $this->scope['ticket'])
 	{
 /* -- foreach start output */
 ?>
             <tr>
-                <td><a href="/ticketdetail.php?id=<?php echo $this->scope["ticket"]["ticketsID"];?>"><?php echo $this->scope["ticket"]["ticketsID"];?></td>
+                <td><a href="/ticketsystem/ticketdetail.php?id=<?php echo $this->scope["ticket"]["ticketsID"];?>"><?php echo $this->scope["ticket"]["ticketsID"];?></td>
                 <td><?php echo $this->scope["ticket"]["name"];?></td>
                 <td><?php echo $this->scope["ticket"]["email"];?></td>
                 <td><?php echo $this->scope["ticket"]["message"];?></td>
@@ -89,6 +130,8 @@ if ($this->isTraversable($_fh0_data) == true)
 }?>
             </tbody>
         </table>
+        <?php 
+}?>
 </main><!-- /.container -->
 </main><!-- /.container -->
 
